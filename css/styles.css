@@ -24,7 +24,6 @@ body {
 
 .list {
   list-style: none;
-  /*color: var(--main-color);*/
   margin: 0;
   padding: 0;
 }
@@ -126,11 +125,19 @@ a {
 .header .address-list-link {
   display: flex;
   align-items: center;
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .address-list-icon {
   display: block;
   fill: var(--main-color);
+
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header .address-list-link:hover .address-list-icon,
@@ -186,12 +193,16 @@ a {
 
 .navigation-list-link {
   color: var(--heading-color);
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.address-list-link {
+/* .address-list-link {
   color: var(--main-color);
 }
-
+*/
 .navigation-list-link:hover,
 .navigation-list-link:focus,
 .address-list-link:hover,
@@ -202,14 +213,20 @@ a {
 .navigation-list-link.active {
   color: var(--accent-color);
 }
+.navigation-list-link.active::after {
+  content: "";
+  width: auto;
+  height: 4px;
+  display: block;
+  background: var(--accent-color);
+  border-radius: 2px;
 
+  position: relative;
+  top: 30px;
+}
 /* ============== END HEADER ============== */
 
 /* ============== HERO SECTION ============== */
-
-.hero-section {
-  background-color: var(--backgr-color-first);
-}
 
 .hero-section > .container {
   flex-direction: column;
@@ -235,7 +252,21 @@ a {
   color: var(--main-color-dark-backgr);
   margin-bottom: 30px;
 }
-
+/*
+.hero-section > .container {
+  flex-direction: column;
+  padding-top: 200px;
+  padding-bottom: 200px;
+  width: 1600px;
+  background-image: linear-gradient(
+      var(--hero-gradient-color),
+      var(--hero-gradient-color)
+    ),
+    url(../source_images/background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+*/
 .hero-button {
   font-weight: 500;
   font-size: 16px;
@@ -250,6 +281,7 @@ a {
   color: var(--main-color-dark-backgr);
   background-color: var(--accent-color);
 }
+
 /* ============== END HERO SECTION ============== */
 
 /* ============== OUR SERVICE SECTION ============== */
@@ -312,6 +344,9 @@ a {
   justify-content: center;
 }
 
+.specialization-list-item {
+  position: relative;
+}
 .specialization-list-item:not(:last-child) {
   margin-right: var(--card-set-specialization);
 }
@@ -330,7 +365,22 @@ a {
 .specialization-title {
   margin-bottom: 50px;
 }
+.specialization-name {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.143;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--main-color-dark-backgr);
 
+  width: 370px;
+  background-color: rgba(47, 48, 58, 0.8);
+  position: absolute;
+  bottom: 0px;
+  padding: 27px 0;
+}
 /* ============== END OUR SPECIALIZATION SECTION ============== */
 
 /* ============== OUR COMAND ============== */
@@ -401,12 +451,20 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  transition-property: background;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-list-icon {
   width: 20px;
   height: 20px;
   fill: var(--social-link-color);
+
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-list-link:hover,
@@ -445,6 +503,10 @@ a {
   border: 1px solid var(--social-link-color);
   box-sizing: border-box;
   border-radius: 4px;
+
+  transition-property: border-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .our-client-link:hover,
@@ -463,6 +525,10 @@ a {
 
 .our-clients-icon {
   fill: #afb1b8;
+
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .first-client-icon {
